@@ -1,0 +1,116 @@
+.link-text {
+    font-size: 8pt;
+}
+/* Login Styles */
+#wpmem_login input[type=text], #wpmem_login input[type=password]{
+    display: block;
+    height: 35px;
+    width: 100%;
+}
+
+#wpmem_login legend {
+    text-align: center;
+    font-size: 18pt;
+    font-family: Lato, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    padding-bottom: 15px;
+    color: #025d90;
+}
+
+#wpmem_login label {
+    color: #025d90;
+    font-family: Lato, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    text-decoration: none;
+    margin: 0px;
+}
+
+#wpmem_login input[type=checkbox] {
+    margin: 5px 5px 4px 5px;
+}
+
+#wpmem_login .div_text {
+    padding-bottom: 10px;
+}
+
+#wpmem_login .button_div label {
+    float: right;
+}
+
+#wpmem_login .button_div input[type=checkbox], #wpmem_reg .button_div label {
+    float: right;
+}
+
+#wpmem_login input[type=submit] {
+    padding: 15px 40px;
+    margin: 0px;
+    float: left;
+    color: white;
+    background-color: #025d90;
+    transition: all .3s;
+}
+
+#wpmem_login input[type=submit]:hover {
+    background-color: #00a0d2;
+    box-shadow: 1px 1px 5px #888888;
+}
+
+/* Registration Styles */
+#wpmem_reg input[type=text], #wpmem_reg input[type=password], #wpmem_reg input[type=email]{
+    display: block;
+    height: 35px;
+    width: 100%;
+}
+
+#wpmem_reg legend {
+    text-align: center;
+    font-size: 18pt;
+    font-family: Lato, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    padding-bottom: 15px;
+    color: #025d90;
+}
+
+#wpmem_reg label {
+    color: #025d90;
+    font-family: Lato, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    text-decoration: none;
+    margin: 0px;
+}
+
+#wpmem_reg input[type=checkbox] {
+    margin: 5px 5px 4px 5px;
+}
+
+#wpmem_reg .div_text {
+    padding-bottom: 10px;
+}
+
+#wpmem_reg .button_div input[type=checkbox], #wpmem_reg .button_div label {
+    float: right;
+}
+
+#wpmem_reg input[type=submit] {
+    padding: 15px 40px;
+    margin: 0px;
+    float: left;
+    color: white;
+    background-color: #025d90;
+    transition: all .3s;
+}
+
+#wpmem_reg input[type=submit]:hover {
+    background-color: #00a0d2;
+    box-shadow: 1px 1px 5px #888888;
+}
+
+#wpmem_reg .req-text {
+    float:right;
+    font-size: 8pt;
+    color: #025d90;
+}
