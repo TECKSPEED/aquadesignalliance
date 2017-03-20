@@ -71,8 +71,8 @@ $prev_post = get_previous_post();
             <?php if (have_posts()) : ?>
                 <?php while (have_posts()) : the_post(); ?>
                     <div class="w-col w-col-6 w-col-small-12 pull-left">
-                        <a rel="gallery" href="<?php echo the_post_thumbnail_url(); ?>" class="swipebox">
-                            <div class="gallery-image" style="background-image: url(' <?php echo the_post_thumbnail_url() ?> ')"></div>
+                        <a rel="gallery" href="<?php echo the_post_thumbnail_url('full'); ?>" class="swipebox">
+                            <div class="gallery-image" style="background-image: url(' <?php echo the_post_thumbnail_url('full') ?> ')"></div>
                         </a>
                         <div class="w-col-12 gallery-images-container">
                             <?php $galleryArray = get_post_gallery_ids($post->ID); ?>

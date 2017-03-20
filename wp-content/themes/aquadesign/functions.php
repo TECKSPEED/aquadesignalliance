@@ -153,7 +153,7 @@ function breadcrumbs() {
 <?php } 
 
 add_theme_support( 'post-thumbnails' );
-set_post_thumbnail_size( 250, 250 );
+set_post_thumbnail_size( 500, 500 );
 	
 	function blm2016_init_method() {
     wp_enqueue_script('jquery');
