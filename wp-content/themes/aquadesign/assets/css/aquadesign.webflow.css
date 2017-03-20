@@ -1650,6 +1650,106 @@ form.wpcf7-form p {
 
 }
 
+div.syt input[type="file"] {
+  overflow: hidden;
+  border: 3px dotted #666;
+}
+
+div.syt input[type="file"]:hover {
+  border: 3px dotted #00a0d2;
+  border-radius: 2px;
+  color: #333333;
+  padding: 8px 10px 8px;
+  background: none repeat scroll 0% 0% #fff;
+}
+
+div.syt input[type="file"]:focus {
+  border: 3px dotted #00a0d2;
+}
+
+form.syt-form input, form.syt-form textarea, form.syt-form select {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 2px;
+  color: #333333;
+  font-family: kepler-std, sans-serif;
+  padding: 8px 10px 8px;
+  background: none repeat scroll 0% 0% #fff;
+  transition: .2s all;
+  width:100%;
+}
+
+form.syt-form input:hover, form.syt-form textarea:hover, form.syt-form select:hover {
+  border: 1px solid #00a0d2;
+  border-radius: 2px;
+  color: #333333;
+  padding: 8px 10px 8px;
+  background: none repeat scroll 0% 0% #fff;
+}
+
+form.syt-form input:focus, form.syt-form textarea:focus, form.syt-form select:focus {
+  border: 1px solid #00a0d2;
+}
+
+form.syt-form input[type=submit] {
+  padding: 15px 40px;
+  margin: 0px;
+  color: white;
+  background-color: #025d90;
+  transition: all .3s;
+  font-family: kepler-std, sans-serif;
+}
+
+form.syt-form input[type=submit]:hover {
+  background-color: #00a0d2;
+  box-shadow: 1px 1px 5px #888888;
+}
+
+form.syt-form label {
+  color: #025d90;
+  font-family: Lato, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  text-decoration: none;
+  margin: 0px;
+  width:100%;
+}
+
+.syt-form .syt-response-output.syt-validation-errors, div.syt-mail-sent-ng {
+  color: #D8000C;
+  background-color: #FFBABA;
+  border: 0;
+  padding: 10px;
+  border:none;
+  font-size: 9pt;
+}
+.syt-form .syt-response-output.syt-mail-sent-ok {
+  color: #4F8A10;
+  background-color: #DFF2BF;
+  border: 0;
+  padding: 10px;
+  font-size: 9pt;
+}
+div.syt-mail-sent-ok:before,div.syt-validation-errors:before, div.syt-mail-sent-ng:before {
+  font: 26px/30px dashicons;
+  margin-right: 16px;
+  vertical-align: middle;
+  font-size: 9pt;
+}
+div.syt-mail-sent-ok:before {
+  content: "\f147";
+}
+div.syt-validation-errors:before, div.syt-mail-sent-ng:before {
+  content: "\f158";
+}
+
+div.syt-mail-sent-ng {
+  border: 0 !important;
+}
+
+form.syt-form p {
+
+}
+
 .menu-nav-window{
     margin: 0 auto;
     width: 940px;

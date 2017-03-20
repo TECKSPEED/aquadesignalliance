@@ -18,14 +18,17 @@
 <link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_directory'); ?>/assets/css/webflow.css">
 <link rel="stylesheet" type="text/css" href="<?php bloginfo ('stylesheet_directory'); ?>/assets/css/aquadesign.webflow.css">
 <link rel="stylesheet" href="<?php bloginfo ('stylesheet_directory'); ?>/assets/css/swipebox.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/css?family=Francois+One" rel="stylesheet">
+
+
 <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script type="text/javascript" src="<?php bloginfo ('stylesheet_directory'); ?>/js/main.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.16.0/jquery.validate.min.js"></script>
 <script type="text/javascript" src="<?php bloginfo ('stylesheet_directory'); ?>/js/jquery.slides.min.js"></script>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-<link href="https://fonts.googleapis.com/css?family=Francois+One" rel="stylesheet">
+<script type="text/javascript" src="<?php bloginfo ('stylesheet_directory'); ?>/js/form.validation.js"></script>
 <script src="<?php bloginfo ('stylesheet_directory'); ?>/js/jquery.swipebox.js"></script>
-
 
 
 <script>
