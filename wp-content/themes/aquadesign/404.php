@@ -9,50 +9,53 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+<?php global $post; ?>
+<?php
+$src = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), array(5600, 1000), false, '');
+?>
+<div class="w-section home-main sub-main" style="background-color: #00573c;
+        background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('<?php echo $src[0]; ?>');
+        background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('<?php echo $src[0]; ?>');
+        background-position: 0% 0%, 0px 38%; background-size: cover;">
+    <div class="w-container hero-container sub-hero-container">
+        <h1 class="hero-h1"><?php the_title(); ?></h1>
+    </div>
+</div>
 
-			<section class="error-404 not-found">
-				<header class="page-header">
-					<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'aquadesign' ); ?></h1>
-				</header><!-- .page-header -->
-
-				<div class="page-content">
-					<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'aquadesign' ); ?></p>
-
-					<?php get_search_form(); ?>
-
-					<?php the_widget( 'WP_Widget_Recent_Posts' ); ?>
-
-					<?php if ( aquadesign_categorized_blog() ) : // Only show the widget if site has multiple categories. ?>
-					<div class="widget widget_categories">
-						<h2 class="widget-title"><?php esc_html_e( 'Most Used Categories', 'aquadesign' ); ?></h2>
-						<ul>
-						<?php
-							wp_list_categories( array(
-								'orderby'    => 'count',
-								'order'      => 'DESC',
-								'show_count' => 1,
-								'title_li'   => '',
-								'number'     => 10,
-							) );
-						?>
-						</ul>
-					</div><!-- .widget -->
-					<?php endif; ?>
-
-					<?php
-						/* translators: %1$s: smiley */
-						$archive_content = '<p>' . sprintf( esc_html__( 'Try looking in the monthly archives. %1$s', 'aquadesign' ), convert_smilies( ':)' ) ) . '</p>';
-						the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$archive_content" );
-					?>
-
-					<?php the_widget( 'WP_Widget_Tag_Cloud' ); ?>
-
-				</div><!-- .page-content -->
-			</section><!-- .error-404 -->
-
-		</main><!-- #main -->
-	</div><!-- #primary -->
+<div class="w-section action-menu">
+    <div class="breadcrumb-container">
+        <div class="w-container breadcrumbs">
+            <?php breadcrumbs(); ?>
+        </div>
+    </div>
+    <div class="w-container subpage-container">
+        <?php if (have_posts()) : ?>
+            <?php while (have_posts()) : the_post(); ?>
+                <?php the_content('Read the rest of this entry »'); ?>
+                <form name="submitYourTank" action="<?php echo get_bloginfo('template_url'); ?>/submit-your-tank-parser.php" method="post" class="syt-form submitYourTank" enctype="multipart/form-data">
+                    <div class="w-col w-col-12">
+                        <p class="single-gallery-specs">Show us your Aquascape</p>
+                    </div>
+                    <div>
+                        <p>
+                            <label>Name</label>
+                            <span>
+                                <input type="text" name="name" size="40">
+                            </span>
+                        </p>
+                        <p>
+                        <span class="syt-form-control-wrap aquascapeImages">
+                            <input type="file" name="photo[]" multiple>
+                        </span>
+                        </p>
+                        <p><input type="submit" name="submit" value="Send" class="syt-form-control syt-submit">
+                        </p>
+                    </div>
+                    <div class="syt-response-output syt-display-none"></div>
+                </form>
+            <?php endwhile; ?>
+        <?php endif; ?>
+    </div>
+</div>
 
 <?php get_footer(); ?>
