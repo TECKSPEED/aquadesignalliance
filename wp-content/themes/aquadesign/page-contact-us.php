@@ -45,9 +45,9 @@ $src = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), array(5600,
                             <p>We hope your enjoying your time here, if you should ever want to get in touch with us directly fill out the form to your left. We love to hear from fellow hobbyists!</p>
                             <p>If your having trouble finding your way - it's ok! Here are some links that may be most useful to you:</p>
                             <ul>
-                                <li><a href="google.com">Gallery</a></li>
-                                <li>Contests</li>
-                                <li>Submit Your Tank</li>
+                                <li><a href="/gallery">Gallery</a></li>
+                                <li><a href="/contests">Contests</a></li>
+                                <li><a href="/faq">FAQ</a></li>
                             </ul>
                         </div>
                     </div>

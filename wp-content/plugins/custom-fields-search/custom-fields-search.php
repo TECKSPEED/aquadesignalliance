@@ -1,17 +1,17 @@
 <?php
 /*
 Plugin Name: Custom Fields Search by BestWebSoft
-Plugin URI: http://bestwebsoft.com/products/wordpress/plugins/custom-fields-search/
+Plugin URI: https://bestwebsoft.com/products/wordpress/plugins/custom-fields-search/
 Description: Add custom fields to WordPress website search results.
 Author: BestWebSoft
 Text Domain: custom-fields-search
 Domain Path: /languages
-Version: 1.3.1
-Author URI: http://bestwebsoft.com/
+Version: 1.3.2
+Author URI: https://bestwebsoft.com/
 License: GPLv2 or later
 */
 
-/*  © Copyright 2017  BestWebSoft  ( http://support.bestwebsoft.com )
+/*  © Copyright 2017  BestWebSoft  ( https://support.bestwebsoft.com )
 
 	This program is free software; you can redistribute it and/or modify
 	it under the terms of the GNU General Public License, version 2, as
@@ -47,7 +47,7 @@ if ( ! function_exists( 'cstmfldssrch_plugins_loaded' ) ) {
 
 if ( ! function_exists( 'cstmfldssrch_init' ) ) {
 	function cstmfldssrch_init() {
-		global $cstmfldssrch_plugin_info;		
+		global $cstmfldssrch_plugin_info;
 
 		require_once( dirname( __FILE__ ) . '/bws_menu/bws_include.php' );
 		bws_include_init( plugin_basename( __FILE__ ) );
@@ -60,7 +60,7 @@ if ( ! function_exists( 'cstmfldssrch_init' ) ) {
 
 		/* Function check if plugin is compatible with current WP version  */
 		bws_wp_min_version_check( plugin_basename( __FILE__ ), $cstmfldssrch_plugin_info, '3.8', '3.1' );
-		
+
 		/* Call register settings function */
 		if ( ! is_admin() || ( isset( $_GET['page'] ) && "custom-fields-search.php" == $_GET['page'] ) )
 			cstmfldssrch_register_options();
@@ -72,7 +72,7 @@ if ( ! function_exists( 'cstmfldssrch_admin_init' ) ) {
 		global $bws_plugin_info, $cstmfldssrch_plugin_info;
 
 		if ( ! isset( $bws_plugin_info ) || empty( $bws_plugin_info ) )
-			$bws_plugin_info = array( 'id' => '85', 'version' => $cstmfldssrch_plugin_info["Version"] );		
+			$bws_plugin_info = array( 'id' => '85', 'version' => $cstmfldssrch_plugin_info["Version"] );
 	}
 }
 
@@ -150,7 +150,7 @@ if( ! function_exists( 'cstmfldssrch_request' ) ) {
 			$end_pos_where = 5 + $pos; /* find position of the end of the request with check the type and status of the post */
 			$end_of_where_request = substr( $where, $end_pos_where ); /* save check the type and status of the post in variable */
 			/* Exclude for gallery and gallery pro from search - dont show attachment with keywords */
-			$flag_gllr_image = array();			 
+			$flag_gllr_image = array();
 			if ( in_array( 'gllr_image_text', $cstmfldssrch_options['fields'] ) || in_array( 'gllr_image_alt_tag', $cstmfldssrch_options['fields'] ) ||
 				in_array( 'gllr_link_url', $cstmfldssrch_options['fields'] ) || in_array( 'gllr_image_description', $cstmfldssrch_options['fields'] ) ||
 				in_array( 'gllr_lightbox_button_url', $cstmfldssrch_options['fields'] ) ) {
@@ -162,7 +162,7 @@ if( ! function_exists( 'cstmfldssrch_request' ) ) {
 					}
 				}
 			}
-			
+
 			$user_request = esc_sql( trim( $wp_query->query_vars['s'] ) );
 			$user_request_arr = preg_split( "/[\s,]+/", $user_request ); /* The user's regular expressions are used to separate array for the desired keywords */
 
@@ -171,7 +171,7 @@ if( ! function_exists( 'cstmfldssrch_request' ) ) {
 				$where .=  " OR (" . $wpdb->postmeta . ".meta_key IN (" . $cusfields_sql_request . ") "; /* Modify the request */
 				foreach ( $user_request_arr as $value ) {
 					$where .= "AND " . $wpdb->postmeta . ".meta_value LIKE '%" . $value . "%' ";
-				} 
+				}
 				$where .= $end_of_where_request . ") ";
 			}
 
@@ -184,8 +184,8 @@ if( ! function_exists( 'cstmfldssrch_request' ) ) {
 					foreach ( $user_request_arr as $value ) {
 						$where_new_end .= "AND " . $wpdb->postmeta . ".meta_value LIKE '%" . $value . "%' ";
 					}
-					/* search posts-attachments */			
-					$id_attachment_arr = $wpdb->get_col( "SELECT " . $wpdb->posts . ".id FROM " . $wpdb->postmeta . " JOIN " . $wpdb->posts . " ON " . $wpdb->posts . ".id = " . $wpdb->postmeta . ".post_id WHERE  " . $wpdb->postmeta . ".meta_key = '" . $flag_gllr_image_value . "' " . $where_new_end );	
+					/* search posts-attachments */
+					$id_attachment_arr = $wpdb->get_col( "SELECT " . $wpdb->posts . ".id FROM " . $wpdb->postmeta . " JOIN " . $wpdb->posts . " ON " . $wpdb->posts . ".id = " . $wpdb->postmeta . ".post_id WHERE  " . $wpdb->postmeta . ".meta_key = '" . $flag_gllr_image_value . "' " . $where_new_end );
 					/* if posts-attachments exists - search gallery post ID */
 					if ( ! empty( $id_attachment_arr ) ) {
 						$array_id_gallery = array();
@@ -231,10 +231,10 @@ if ( ! function_exists( 'cstmfldssrch_page_of_settings' ) ) {
 		}
 		$install_plugins		=	get_plugins(); ?>
 		<div class="wrap">
-			<h1><?php echo get_admin_page_title(); ?></h1>		
+			<h1><?php echo get_admin_page_title(); ?></h1>
 			<div class="updated fade below-h2" <?php if ( ! isset( $_REQUEST['cstmfldssrch_submit_nonce'] ) ) echo "style=\"display:none\""; ?>><p><strong><?php echo $message; ?></strong></p></div>
 			<?php bws_show_settings_notice(); ?>
-			<form method="post" action="" id="cstmfldssrch_settings_form" class="bws_form">				
+			<form method="post" action="" id="cstmfldssrch_settings_form" class="bws_form">
 				<table class="form-table">
 					<tr valign="top">
 						<?php if ( 0 < count( $meta_key_result ) ) { ?>
@@ -270,8 +270,8 @@ if ( ! function_exists( 'cstmfldssrch_page_of_settings' ) ) {
 										if ( array_key_exists( 'custom-search-pro/custom-search-pro.php', $install_plugins ) || array_key_exists( 'custom-search-plugin/custom-search-plugin.php', $install_plugins ) ) { ?>
 											<span class="bws_info"><?php _e( 'You need to', 'custom-fields-search' ); ?> <a href="<?php echo bloginfo("url"); ?>/wp-admin/plugins.php"><?php _e( 'activate plugin', 'custom-fields-search' ); ?> Custom Search</a><span>
 										<?php } else { ?>
-											<span class="bws_info"><?php _e( 'If the type of the post is not default - you need to install and activate the plugin', 'custom-fields-search' ); ?> <a href="http://bestwebsoft.com/products/wordpress/plugins/custom-search/">Custom Search</a>.<span>
-										<?php } 
+											<span class="bws_info"><?php _e( 'If the type of the post is not default - you need to install and activate the plugin', 'custom-fields-search' ); ?> <a href="https://bestwebsoft.com/products/wordpress/plugins/custom-search/">Custom Search</a>.<span>
+										<?php }
 									} ?>
 								</td>
 							<?php }
@@ -284,13 +284,13 @@ if ( ! function_exists( 'cstmfldssrch_page_of_settings' ) ) {
 						<td>
 							<input type="checkbox" <?php if ( 1 == $cstmfldssrch_options['show_hidden_fields'] ) echo  'checked="checked"'; ?> name="cstmfldssrch_show_hidden_fields" value="1" />
 						</td>
-					</tr>						
+					</tr>
 				</table>
 				<p class="submit">
 					<input id="bws-submit-button" type="submit" class="button-primary" value="<?php _e( 'Save Changes', 'custom-fields-search' ); ?>" />
 					<input type="hidden" name="cstmfldssrch_submit_nonce" value="submit" />
 					<?php wp_nonce_field( plugin_basename( __FILE__ ), 'cstmfldssrch_nonce_name' ); ?>
-				</p>				
+				</p>
 			</form>
 			<?php bws_plugin_reviews_block( $cstmfldssrch_plugin_info['Name'], 'custom-fields-search' ); ?>
 		</div>
@@ -330,8 +330,8 @@ if ( ! function_exists ( 'cstmfldssrch_links' ) ) {
 		if ( $file == $base ) {
 			if ( ! is_network_admin() )
 				$links[]	=	'<a href="admin.php?page=custom-fields-search.php">' . __( 'Settings', 'custom-fields-search' ) . '</a>';
-			$links[]	=	'<a href="http://wordpress.org/plugins/custom-fields-search/faq/">' . __( 'FAQ', 'custom-fields-search' ) . '</a>';
-			$links[]	=	'<a href="http://support.bestwebsoft.com">' . __( 'Support', 'custom-fields-search' ) . '</a>';
+			$links[]	=	'<a href="https://support.bestwebsoft.com/hc/en-us/sections/200538819">' . __( 'FAQ', 'custom-fields-search' ) . '</a>';
+			$links[]	=	'<a href="https://support.bestwebsoft.com">' . __( 'Support', 'custom-fields-search' ) . '</a>';
 		}
 		return $links;
 	}

@@ -114,7 +114,6 @@ jQuery(document).ready(function($){
         loopAtEnd: true // true will return to the first image after the last image is reached
 	});
 
-
 });
 
 

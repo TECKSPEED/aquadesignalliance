@@ -23,11 +23,6 @@ $src = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), array(5600,
 </div>
 
 <div class="w-section action-menu">
-    <div class="breadcrumb-container">
-        <div class="w-container breadcrumbs">
-            <?php breadcrumbs(); ?>
-        </div>
-    </div>
     <div class="w-container subpage-container">
         <?php if (have_posts()) : ?>
             <?php while (have_posts()) : the_post(); ?>
