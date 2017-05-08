@@ -8,7 +8,7 @@ $loop = new WP_Query( array( 'post_type' => 'gallery', 'posts_per_page' => -1 ) 
 <div class="w-section home-main sub-main" style="background-color: #00573c;
         background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('<?php echo $src[0]; ?>');
         background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('<?php echo $src[0]; ?>');
-        background-position: 0% 0%, 0px 38%; background-size: cover;">
+        background-position: 50% 50%; background-size: cover;">
     <div class="w-container hero-container sub-hero-container">
         <h1 class="hero-h1"><?php the_title(); ?></h1>
     </div>

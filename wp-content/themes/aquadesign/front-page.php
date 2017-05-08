@@ -36,7 +36,14 @@ $loop = new WP_Query( array( 'post_type' => 'gallery', 'posts_per_page' => 3 ) )
                                           background-repeat: no-repeat;
                                           background-attachment: scroll;" >
   <div class="w-container hero-container">
-    <p class="hero-details"><span>"<?php echo $aquascapeTitle; ?>"</span> by <?php echo $aquascapeAuthor; ?></p>
+      <p class="hero-details">
+      <?php if (!$aquascapeTitle == null){ ?>
+            <span>"<?php echo $aquascapeTitle; ?>"
+        <?php } ?>
+        <?php if(!$aquascapeAuthor == null){ ?>
+            </span> by <?php echo $aquascapeAuthor; ?>
+      <?php } ?>
+      </p>
   </div>
 </div>
 <div class="w-section action-menu">

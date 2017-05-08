@@ -405,7 +405,7 @@ function aquascape_author_html( $post) {
 
 	<p>
 	<label for="aquascape_author_aquascape_quthor"><?php _e( 'Aquascape Quthor', 'aquascape_author' ); ?></label><br>
-	<input type="text" name="aquascape_author_aquascape_quthor" id="aquascape_author_aquascape_quthor" value="<?php echo aquascape_author_get_meta( 'aquascape_author_aquascape_quthor' ); ?>">
+	<input type="text" name="aquascape_author_aquascape_quthor" id="aquascape_author_aquascape_quthor" value="<?php echo aquascape_author_get_meta( 'usp-custom-AquascapeAuthor' ); ?>">
 	</p><?php
 }
 
@@ -517,34 +517,34 @@ function tank_specifications_html( $post) {
 
     <p>
         <label for="tank_specifications_light"><?php _e( 'Light', 'tank_specifications' ); ?></label><br>
-        <input type="text" name="tank_specifications_light" id="tank_specifications_light" style="width:100%;" value="<?php echo tank_specifications_get_meta( 'tank_specifications_light' ); ?>">
+        <input type="text" name="tank_specifications_light" id="tank_specifications_light" style="width:100%;" value="<?php echo tank_specifications_get_meta( 'usp-custom-LightFixture' ); ?>">
     </p>	<p>
         <label for="tank_specifications_light_cycle"><?php _e( 'Light Cycle', 'tank_specifications' ); ?></label><br>
-        <input type="text" name="tank_specifications_light_cycle" id="tank_specifications_light_cycle" style="width:100%;" value="<?php echo tank_specifications_get_meta( 'tank_specifications_light_cycle' ); ?>">
+        <input type="text" name="tank_specifications_light_cycle" id="tank_specifications_light_cycle" style="width:100%;" value="<?php echo tank_specifications_get_meta( 'usp-custom-LightCycle' ); ?>">
     </p>	<p>
         <label for="tank_specifications_co2"><?php _e( 'Co2', 'tank_specifications' ); ?></label><br>
-        <input type="text" name="tank_specifications_co2" id="tank_specifications_co2" style="width:100%;" value="<?php echo tank_specifications_get_meta( 'tank_specifications_co2' ); ?>">
+        <input type="text" name="tank_specifications_co2" id="tank_specifications_co2" style="width:100%;" value="<?php echo tank_specifications_get_meta( 'usp-custom-4' ); ?>">
     </p>	<p>
         <label for="tank_specifications_aeration"><?php _e( 'Aeration', 'tank_specifications' ); ?></label><br>
-        <input type="text" name="tank_specifications_aeration" id="tank_specifications_aeration" style="width:100%;" value="<?php echo tank_specifications_get_meta( 'tank_specifications_aeration' ); ?>">
+        <input type="text" name="tank_specifications_aeration" id="tank_specifications_aeration" style="width:100%;" value="<?php echo tank_specifications_get_meta( 'usp-custom-5' ); ?>">
     </p>	<p>
         <label for="tank_specifications_filtration"><?php _e( 'Filtration', 'tank_specifications' ); ?></label><br>
-        <input type="text" name="tank_specifications_filtration" id="tank_specifications_filtration" style="width:100%;" value="<?php echo tank_specifications_get_meta( 'tank_specifications_filtration' ); ?>">
+        <input type="text" name="tank_specifications_filtration" id="tank_specifications_filtration" style="width:100%;" value="<?php echo tank_specifications_get_meta( 'usp-custom-Filtration' ); ?>">
     </p>	<p>
         <label for="tank_specifications_tank_dimensions"><?php _e( 'Tank Dimensions', 'tank_specifications' ); ?></label><br>
-        <input type="text" name="tank_specifications_tank_dimensions" id="tank_specifications_tank_dimensions" style="width:100%;" value="<?php echo tank_specifications_get_meta( 'tank_specifications_tank_dimensions' ); ?>">
+        <input type="text" name="tank_specifications_tank_dimensions" id="tank_specifications_tank_dimensions" style="width:100%;" value="<?php echo tank_specifications_get_meta( 'usp-custom-TankDimensions' ); ?>">
     </p>	<p>
         <label for="tank_specifications_substrate"><?php _e( 'Substrate', 'tank_specifications' ); ?></label><br>
-        <input type="text" name="tank_specifications_substrate" id="tank_specifications_substrate" style="width:100%;" value="<?php echo tank_specifications_get_meta( 'tank_specifications_substrate' ); ?>">
+        <input type="text" name="tank_specifications_substrate" id="tank_specifications_substrate" style="width:100%;" value="<?php echo tank_specifications_get_meta( 'usp-custom-TankSubstrate' ); ?>">
     </p>	<p>
         <label for="tank_specifications_flora"><?php _e( 'Flora', 'tank_specifications' ); ?></label><br>
-        <input type="text" name="tank_specifications_flora" id="tank_specifications_flora" style="width:100%;" value="<?php echo tank_specifications_get_meta( 'tank_specifications_flora' ); ?>">
+        <input type="text" name="tank_specifications_flora" id="tank_specifications_flora" style="width:100%;" value="<?php echo tank_specifications_get_meta( 'usp-custom-Flora' ); ?>">
     </p>	<p>
         <label for="tank_specifications_fauna"><?php _e( 'Fauna', 'tank_specifications' ); ?></label><br>
-        <input type="text" name="tank_specifications_fauna" id="tank_specifications_fauna" style="width:100%;" value="<?php echo tank_specifications_get_meta( 'tank_specifications_fauna' ); ?>">
+        <input type="text" name="tank_specifications_fauna" id="tank_specifications_fauna" style="width:100%;" value="<?php echo tank_specifications_get_meta( 'usp-custom-Fauna' ); ?>">
     </p>	<p>
     <label for="tank_specifications_hardscape"><?php _e( 'Hardscape', 'tank_specifications' ); ?></label><br>
-    <input type="text" name="tank_specifications_hardscape" id="tank_specifications_hardscape" style="width:100%;" value="<?php echo tank_specifications_get_meta( 'tank_specifications_hardscape' ); ?>">
+    <input type="text" name="tank_specifications_hardscape" id="tank_specifications_hardscape" style="width:100%;" value="<?php echo tank_specifications_get_meta( 'usp-custom-Hardscape' ); ?>">
     </p><?php
 }
 
@@ -712,5 +712,35 @@ function the_excerpt_max_charlength($charlength) {
     } else {
         echo $excerpt;
     }
+}
+?>
+<?php
+    function my_login_logo() { ?>
+    <style type="text/css">
+        #login h1 a, .login h1 a {
+            background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/assets/images/sampleLogoBorderBlueOffCenter.png);
+            height:65px;
+            width:320px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            padding-bottom: 30px;
+        }
+
+        body.login {
+            background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/assets/images/background.png);
+            background-attachment: fixed;
+            background-position: center;
+        }
+
+        .login #backtoblog {
+            display:none;
+        }
+    </style>
+<?php }
+add_action( 'login_enqueue_scripts', 'my_login_logo' );
+
+add_filter( 'login_headerurl', 'custom_loginlogo_url' );
+function custom_loginlogo_url($url) {
+    return 'http://www.aquadesignalliance.com';
 }
 ?>

@@ -29,13 +29,11 @@ $args = array (
         )
 );
 
-$next_post = get_next_post();
-$prev_post = get_previous_post();
 ?>
 <div class="w-section home-main sub-main" style="background-color: #00573c;
     background-image: -webkit-linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('<?php echo $src[0]; ?>');
     background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('<?php echo $src[0]; ?>');
-    background-position: 0% 0%, 0px 38%; background-size: cover;">
+    background-position: 50% 50%; background-size: cover;">
     <div class="w-container hero-container sub-hero-container">
         <h1 class="hero-h1">&ldquo;<?php the_title(); ?>&rdquo;</h1>
         <?php $t = wp_get_post_tags($post->ID, array('fields' => 'names')); ?>
@@ -47,13 +45,17 @@ $prev_post = get_previous_post();
 <div class="w-row pagination-rows ">
     <nav>
         <div class="w-col-12 w-col-small-12 nav-articles">
-            <div class="w-col w-col-6 w-col-small-6 next">
-                <?php if (!empty( $prev_post->post_title )): ?>
-                    <a href="<?php echo $prev_post->guid ?>"><?php echo $prev_post->post_title ?></a>
-                <?php endif ?>
-            </div>
             <div class="w-col w-col-6 w-col-small-6 prev">
-                <?php if (!empty( $next_post->post_title )): ?>
+                <?php
+                    $prev_post = get_previous_post();
+                    if (!empty( $prev_post )): ?>
+                        <a href="<?php echo get_permalink($prev_post->ID) ?>"><?php echo $prev_post->post_title ?></a>
+                    <?php endif ?>
+            </div>
+            <div class="w-col w-col-6 w-col-small-6 next">
+                <?php
+                $next_post = get_next_post();
+                if (!empty( $next_post )): ?>
                     <a href="<?php echo get_permalink( $next_post->ID ); ?>"><?php echo $next_post->post_title; ?></a>
                 <?php endif; ?>
             </div>
@@ -118,13 +120,17 @@ $prev_post = get_previous_post();
 <div class="w-row pagination-rows ">
     <nav>
         <div class="w-col-12 w-col-small-12 nav-articles">
-            <div class="w-col w-col-6 w-col-small-6 next">
-                <?php if (!empty( $prev_post->post_title )): ?>
-                    <a href="<?php echo $prev_post->guid ?>"><?php echo $prev_post->post_title ?></a>
+            <div class="w-col w-col-6 w-col-small-6 prev">
+                <?php
+                $prev_post = get_previous_post();
+                if (!empty( $prev_post )): ?>
+                    <a href="<?php echo get_permalink($prev_post->ID) ?>"><?php echo $prev_post->post_title ?></a>
                 <?php endif ?>
             </div>
-            <div class="w-col w-col-6 w-col-small-6 prev">
-                <?php if (!empty( $next_post->post_title )): ?>
+            <div class="w-col w-col-6 w-col-small-6 next">
+                <?php
+                $next_post = get_next_post();
+                if (!empty( $next_post )): ?>
                     <a href="<?php echo get_permalink( $next_post->ID ); ?>"><?php echo $next_post->post_title; ?></a>
                 <?php endif; ?>
             </div>

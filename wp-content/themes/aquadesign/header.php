@@ -52,10 +52,10 @@ WebFont.load({
 <div class="w-section w-hidden-medium w-hidden-small w-hidden-tiny utility-info">
    <div class="w-container w-hidden-small w-hidden-tiny utility-container">
     <div class="w-row">
-      <div class="w-col w-col-4">
+      <div class="w-col w-col-3">
         <div><?php get_search_form(true) ?></div>
       </div>
-      <div class="w-col w-col-8 w-clearfix">
+      <div class="w-col w-col-9 w-clearfix">
                <?php wp_nav_menu( array( 'theme_location' => 'utility', 'menu_id' => 'header-nav-link' ) ); ?>
       </div>
     </div>
